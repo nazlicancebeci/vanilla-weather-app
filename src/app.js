@@ -10,13 +10,9 @@ function showTemperature(response) {
   document.querySelector("h3").innerHTML = response.data.weather[0].description;
   celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  let iconElement = document.querySelector("#icon");
-
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  let todayIcon = document.querySelector("#icon");
+  todayIcon.setAttribute("src", `img/${response.data.weather[0].icon}.svg`);
+  todayIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
