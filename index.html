@@ -57,42 +57,24 @@
         <h2></h2>
         <h3></h3>
         <div class="row">
-          <div class="col-6 today-weather">
-            <img
+          <div class="col-8 today-weather"> <img
               src="img/01d.svg"
-              width="50%"
               alt="sunny"
               id="icon"
               class="clear"
             />
+
             <span class="temperature" id="temperature"></span>
-            <div
-              class="btn-group"
-              role="group"
-              aria-label="Basic radio toggle button group"
-            >
-              <input
-                type="radio"
-                class="btn-check"
-                name="btnradio"
-                id="btnradio1"
-                autocomplete="off"
-                value="celsius"
-                checked
-              />
-              <label class="btn btn-outline-primary" for="btnradio1">°C</label>
-              <input
-                type="radio"
-                class="btn-check"
-                name="btnradio"
-                id="btnradio2"
-                autocomplete="off"
-                value="fahrenheit"
-              />
-              <label class="btn btn-outline-primary" for="btnradio2">°F</label>
-            </div>
-          </div>
-          <div class="col-6 today-weather-details">
+<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+  <label class="btn btn-outline-primary" for="btnradio1">°C</label>
+
+  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+  <label class="btn btn-outline-primary" for="btnradio2">°F</label>
+</div>
+</h4>
+</div>
+          <div class="col-3 today-weather-details">
             Humidity: <span id="humidity"></span>%<br />
             Wind: <span id="wind"></span> km/h
           </div>
