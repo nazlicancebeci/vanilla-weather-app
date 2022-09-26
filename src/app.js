@@ -7,13 +7,18 @@ function showTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
   document.querySelector("h3").innerHTML = response.data.weather[0].description;
   celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  let todayIcon = document.querySelector("#icon");
-  todayIcon.setAttribute("src", `img/${response.data.weather[0].icon}.svg`);
-  todayIcon.setAttribute("alt", response.data.weather[0].description);
+
+      let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 
 function searchCity(city) {
   let apiKey = "432f964654f26648077a2a40f187121b";
@@ -111,4 +116,4 @@ function fahrenheit(event) {
 let fahrenheitButton = document.querySelector("#btnradio2");
 fahrenheitButton.addEventListener("click", fahrenheit);
 
-searchCity("Rome");
+searchCity("Milan");
