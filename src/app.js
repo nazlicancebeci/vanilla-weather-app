@@ -93,6 +93,33 @@ if (currentMinute < 10) {
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${currentDay} ${currentMonth} ${currentDate}, ${currentHour}:${currentMinute}`;
 
+// Weather Forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+let forecastHTML = `<div class="row">`;
+let weekDays = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+weekDays.forEach(function(day) {
+ forecastHTML =
+   forecastHTML +
+   `
+  <div class="col-2">
+    <div class="weather-forecast-date">${day}</div>
+    
+    <img src="img/01d.svg" alt="" width="72" class="forecast-icon"/>
+    <div class="weather-forecast-temperatures">
+      <span class="weather-forecast-temperature-max">20°</span>
+            <span class="weather-forecast-temperature-min">12°</span>
+       </div>
+    
+  </div>
+  `;
+});
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Fahrenheit - Celsius Conversion
 
 function celsius(event) {
@@ -114,4 +141,6 @@ function fahrenheit(event) {
 let fahrenheitButton = document.querySelector("#btnradio2");
 fahrenheitButton.addEventListener("click", fahrenheit);
 
+
 searchCity("Rome");
+displayForecast();
