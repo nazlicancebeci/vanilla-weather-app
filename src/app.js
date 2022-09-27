@@ -13,7 +13,10 @@ function showTemperature(response) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src", `img/${response.data.weather[0].icon}.svg`);
+  iconElement.setAttribute(
+    "src",
+    `img/${response.data.weather[0].icon}.svg`
+  );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
@@ -91,6 +94,8 @@ if (currentMinute < 10) {
 }
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${currentDay} ${currentMonth} ${currentDate}, ${currentHour}:${currentMinute}`;
+
+
 
 // Fahrenheit - Celsius Conversion
 
