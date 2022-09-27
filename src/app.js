@@ -1,3 +1,4 @@
+
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   document.querySelector("#city").innerHTML = response.data.name;
@@ -16,6 +17,8 @@ function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `img/${response.data.weather[0].icon}.svg`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -95,15 +98,15 @@ h2.innerHTML = `${currentDay} ${currentMonth} ${currentDate}, ${currentHour}:${c
 
 // Weather Forecast
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
-let forecastHTML = `<div class="row">`;
-let weekDays = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-weekDays.forEach(function(day) {
- forecastHTML =
-   forecastHTML +
-   `
+  let forecastHTML = `<div class="row">`;
+  let weekDays = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  weekDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
   <div class="col-2">
     <div class="weather-forecast-date">${day}</div>
     
@@ -115,9 +118,15 @@ weekDays.forEach(function(day) {
     
   </div>
   `;
-});
+  });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "432f964654f26648077a2a40f187121b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 // Fahrenheit - Celsius Conversion
@@ -140,7 +149,6 @@ function fahrenheit(event) {
 }
 let fahrenheitButton = document.querySelector("#btnradio2");
 fahrenheitButton.addEventListener("click", fahrenheit);
-
 
 searchCity("Rome");
 displayForecast();
