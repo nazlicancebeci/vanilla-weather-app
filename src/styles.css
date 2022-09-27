@@ -28,23 +28,37 @@ h3 {
 .temperature {
   color: #3f3f3f;
   font-size: 64px;
-margin-right: 10px;
+  margin-right: 10px;
 }
 .footer {
   margin-left: 375px;
   font-size: 10px;
 }
 
-.today-weather-details{
+.today-weather-details {
   margin-top: 80px;
   margin-left: 30px;
-font-size: 14px;
+  font-size: 14px;
 }
 .btn-group {
   padding-bottom: 35px;
 }
-img {
+.weather-icon {
   position: relative;
-  width: 150px;
   padding-bottom: 80px;
+}
+.weather-forecast {
+  text-align: center;
+  color: #000;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  color: #5a5a5a;
+}
+
+.weather-forecast-temperature-min {
+  color: #5a5a5a;
+}
+.weather-forecast-temperatures {
+  font-size: 13px;
 }

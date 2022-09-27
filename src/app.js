@@ -114,4 +114,4 @@ function fahrenheit(event) {
 let fahrenheitButton = document.querySelector("#btnradio2");
 fahrenheitButton.addEventListener("click", fahrenheit);
 
-searchCity("Milan");
+searchCity("Rome");
