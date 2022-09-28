@@ -1,4 +1,3 @@
-
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   document.querySelector("#city").innerHTML = response.data.name;
@@ -98,26 +97,38 @@ h2.innerHTML = `${currentDay} ${currentMonth} ${currentDate}, ${currentHour}:${c
 
 // Weather Forecast
 
-function displayForecast(response) {
-  let forecastElement = document.querySelector("#forecast");
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let weekDays = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-  weekDays.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
   <div class="col-2">
-    <div class="weather-forecast-date">${day}</div>
-    
-    <img src="img/01d.svg" alt="" width="72" class="forecast-icon"/>
+    <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+    <img src="${
+      forecastDay.weather[0].icon
+    }.svg" alt="" width="72" class="forecast-icon"/>
     <div class="weather-forecast-temperatures">
-      <span class="weather-forecast-temperature-max">20°</span>
-            <span class="weather-forecast-temperature-min">12°</span>
+      <span class="weather-forecast-temperature-max">${Math.round(
+        forecastDay.temp.max
+      )}°</span>
+            <span class="weather-forecast-temperature-min">${Math.round(
+              forecastDay.temp.min
+            )}°</span>
        </div>
-    
   </div>
   `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -151,4 +162,3 @@ let fahrenheitButton = document.querySelector("#btnradio2");
 fahrenheitButton.addEventListener("click", fahrenheit);
 
 searchCity("Rome");
-displayForecast();
