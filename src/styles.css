@@ -38,7 +38,7 @@ h3 {
 
 .today-weather-details {
   margin-top: 80px;
-  margin-left: 45px;
+  margin-left: 35px;
   font-size: 12px;
 }
 
@@ -48,7 +48,7 @@ h3 {
 
 .weather-icon {
   position: relative;
-  padding-bottom: 40px;
+  vertical-align: bottom
 
 }
 .weather-forecast {
@@ -58,6 +58,7 @@ h3 {
 .weather-forecast-date {
   font-size: 14px;
   color: #5a5a5a;
+  margin-top: 15px;
 }
 
 .weather-forecast-temperature-min {
