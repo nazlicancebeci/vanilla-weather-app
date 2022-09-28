@@ -15,22 +15,25 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `
-  <div class="col-2">
-    <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-    <img src="img/${
-      forecastDay.weather[0].icon
-    }.svg" alt="" width="72" class="forecast-icon"/>
-    <div class="weather-forecast-temperatures">
-      <span class="weather-forecast-temperature-max">${Math.round(
-        forecastDay.temp.max
-      )}°</span>
-            <span class="weather-forecast-temperature-min">${Math.round(
-              forecastDay.temp.min
-            )}°</span>
-       </div>
-  </div>
-  `;
+        `<div class="col-2">
+              <div class="weather-forecast-date">
+                     ${formatDay(forecastDay.dt)}</div>
+                      <div class="card-body">
+                        <img
+                          src="img/${forecastDay.weather[0].icon}.svg"
+                          alt=""
+                          width=""
+                          class = "forecast-icon"
+                        />
+                        <div class="weather-forecast-temperatures">
+                          <span class="weather-forecast-temperature-max">${Math.round(
+                            forecastDay.temp.max
+                          )}°</span>  <span class="weather-forecast-temperature-min">${Math.round(
+          forecastDay.temp.min
+        )}°</span>
+                    </div>
+                  </div>
+                </div>`;;
     }
   });
   forecastHTML = forecastHTML + `</div>`;

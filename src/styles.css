@@ -6,14 +6,15 @@ body {
 .container {
   max-width: 600px;
   margin: 40px 40px 10px 370px;
-  padding: 30px 30px 20px 30px;
+  padding: 30px 40px 20px 40px;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0px 1px 3px 0px #eeeeee;
+  box-shadow: 2px 2px 5px rgb(205, 204, 204);
   border: 0.5px;
   border-style: solid;
   border-color: #e7e6e6;
 }
+
 h1 {
   font-size: 24px;
 }
@@ -27,7 +28,7 @@ h3 {
 
 .temperature {
   color: #3f3f3f;
-  font-size: 64px;
+  font-size: 60px;
   margin-right: 10px;
 }
 .footer {
@@ -37,22 +38,25 @@ h3 {
 
 .today-weather-details {
   margin-top: 80px;
-  margin-left: 30px;
-  font-size: 14px;
+  margin-left: 45px;
+  font-size: 12px;
 }
+
 .btn-group {
-  padding-bottom: 35px;
+  padding-bottom: 45px;
 }
+
 .weather-icon {
   position: relative;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
+
 }
 .weather-forecast {
   text-align: center;
   color: #000;
 }
 .weather-forecast-date {
-  font-size: 16px;
+  font-size: 14px;
   color: #5a5a5a;
 }
 
@@ -61,4 +65,14 @@ h3 {
 }
 .weather-forecast-temperatures {
   font-size: 13px;
+}
+
+.card-body {
+  padding-top: 15px;
+  padding-right: 3px;
+  padding-bottom: 15px;
+  padding-left: 3px;
+   border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(205, 204, 204);
+  background-color: #f5f5f5;
 }
