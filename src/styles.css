@@ -2,10 +2,22 @@ body {
   background: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   color: #5a5a5a;
+    margin: 30px;
 }
 .container {
+  width: 100%;
+  padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.weather-app-wrapper {
   max-width: 600px;
-  margin: 40px 40px 10px 370px;
+  margin: 10px auto;
+}
+
+.weather-app {
   padding: 30px 40px 20px 40px;
   background-color: #ffffff;
   border-radius: 10px;
@@ -31,10 +43,6 @@ h3 {
   font-size: 60px;
   margin-right: 10px;
 }
-.footer {
-  margin-left: 375px;
-  font-size: 10px;
-}
 
 .today-weather-details {
   margin-top: 80px;
@@ -44,11 +52,12 @@ h3 {
 
 .btn-group {
   padding-bottom: 45px;
+
 }
 
 .weather-icon {
   position: relative;
-  vertical-align: bottom
+  vertical-align: bottom;
 
 }
 .weather-forecast {
@@ -73,7 +82,13 @@ h3 {
   padding-right: 3px;
   padding-bottom: 15px;
   padding-left: 3px;
-   border-radius: 10px;
+  border-radius: 10px;
   box-shadow: 2px 2px 5px rgb(205, 204, 204);
   background-color: #f5f5f5;
+          display: block;
+
+}
+.footer {
+  margin-top: 5px;
+  font-size: 12px;
 }
