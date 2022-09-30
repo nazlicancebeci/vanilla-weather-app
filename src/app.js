@@ -33,7 +33,7 @@ function displayForecast(response) {
         )}°</span>
                     </div>
                   </div>
-                </div>`;;
+                </div>`;
     }
   });
   forecastHTML = forecastHTML + `</div>`;
@@ -43,6 +43,8 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+ 
+ 
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -71,6 +73,8 @@ function showTemperature(response) {
 function searchCity(city) {
   let apiKey = "432f964654f26648077a2a40f187121b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+
   axios.get(apiUrl).then(showTemperature);
 }
 
@@ -91,6 +95,8 @@ function searchLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+
   axios.get(apiUrl).then(showTemperature);
 }
 
@@ -149,9 +155,11 @@ function celsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
 }
 let celsiusButton = document.querySelector("#btnradio1");
 celsiusButton.addEventListener("click", celsius);
+
 
 let celsiusTemperature = null;
 
@@ -160,6 +168,7 @@ function fahrenheit(event) {
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(fahrenheitTemperature);
+
 }
 let fahrenheitButton = document.querySelector("#btnradio2");
 fahrenheitButton.addEventListener("click", fahrenheit);
